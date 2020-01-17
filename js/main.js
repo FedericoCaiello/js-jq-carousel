@@ -39,4 +39,23 @@ function clickNext() {
 
 function clickRight() {
 // alert('click prev');
+// immagini
+ var imageActive = $('img.active');
+ var imageNext = imageActive.next();
+ // icone cerchio
+ var circleActive = $('i.active');
+ var circleNext = circleActive.next();
+
+ if(imageActive.hasClass('last') == true) {
+   imageActive.removeClass('active');
+   $('img.first').addClass('active');
+   circleActive.removeClass('active');
+   $('i.first').addClass('active');
+ }
+ else {
+   imageActive.removeClass('active');
+   imageNext.addClass('active');
+   circleActive.removeClass('active');
+   circleNext.addClass('active');
+ }
 }
