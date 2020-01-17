@@ -20,9 +20,13 @@ function clickNext() {
 // alert('click next');
  var imageActive = $('img.active');
  var imageNext = imageActive.next();
- console.log(imageNext);
- imageActive.removeClass('active');
- console.log(imageActive);
+ if(imageActive.hasClass('last') == true) {
+   $('img.first').addClass('active');
+ }
+ else {
+   imageActive.removeClass('active');
+   imageNext.addClass('active');
+ }
 }
 
 function clickRight() {
